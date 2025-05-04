@@ -43,16 +43,16 @@ const Education = () => {
           </p>
         </div>
 
-        <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-purple-500/30">
+        <div className="space-y-8">
           {educationList.map((item, index) => (
-            <div key={index} className="relative flex items-start md:justify-center">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-purple-500 text-white md:absolute md:left-1/2 md:-translate-x-1/2 z-10">
+            <div key={index} className="relative">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-teal-500 text-slate-900 absolute left-0 z-10">
                 <GraduationCap className="w-5 h-5" />
               </div>
 
-              <div className={`bg-navy-800 p-6 rounded-xl ml-8 md:ml-0 ${index % 2 === 0 ? 'md:mr-10 md:pr-10 md:text-right md:items-end' : 'md:ml-10 md:pl-10'} card-hover md:w-[calc(50%-2.5rem)]`}>
+              <div className="bg-slate-800 p-6 rounded-xl ml-12 card-hover">
                 <div className="mb-2">
-                  <h3 className="text-xl font-bold text-purple-400">{item.degree}</h3>
+                  <h3 className="text-xl font-bold text-teal-400">{item.degree}</h3>
                 </div>
                 <div className="mb-1">
                   <span className="font-medium">{item.institution}</span>
