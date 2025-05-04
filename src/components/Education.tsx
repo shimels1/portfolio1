@@ -1,6 +1,7 @@
 
 import React from "react";
 import { CalendarDays, GraduationCap } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
 
 interface EducationItem {
   degree: string;
@@ -11,6 +12,8 @@ interface EducationItem {
 }
 
 const Education = () => {
+  const { theme } = useTheme();
+  
   const educationList: EducationItem[] = [
     {
       degree: "M.Sc. in Computer Science",
@@ -38,7 +41,7 @@ const Education = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center mb-16">
           <h2 className="section-title text-center">Education</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl text-center mt-4">
+          <p className={`${theme === 'dark' ? 'text-muted-foreground' : 'text-slate-600'} text-lg max-w-2xl text-center mt-4`}>
             My academic background and qualifications
           </p>
         </div>
@@ -50,20 +53,20 @@ const Education = () => {
                 <GraduationCap className="w-5 h-5" />
               </div>
 
-              <div className="bg-slate-800 p-6 rounded-xl ml-12 card-hover">
+              <div className={`${theme === 'dark' ? 'bg-slate-800' : 'bg-slate-100'} p-6 rounded-xl ml-12 card-hover`}>
                 <div className="mb-2">
-                  <h3 className="text-xl font-bold text-teal-400">{item.degree}</h3>
+                  <h3 className="text-xl font-bold text-teal-500">{item.degree}</h3>
                 </div>
                 <div className="mb-1">
                   <span className="font-medium">{item.institution}</span>
-                  <span className="text-muted-foreground"> - {item.location}</span>
+                  <span className={`${theme === 'dark' ? 'text-muted-foreground' : 'text-slate-500'}`}> - {item.location}</span>
                 </div>
                 <div className="flex items-center mb-3">
-                  <CalendarDays className="w-4 h-4 text-muted-foreground mr-1" />
-                  <span className="text-sm text-muted-foreground">{item.period}</span>
+                  <CalendarDays className={`w-4 h-4 ${theme === 'dark' ? 'text-muted-foreground' : 'text-slate-500'} mr-1`} />
+                  <span className={`text-sm ${theme === 'dark' ? 'text-muted-foreground' : 'text-slate-500'}`}>{item.period}</span>
                 </div>
                 {item.details && item.details.length > 0 && (
-                  <ul className="text-muted-foreground">
+                  <ul className={`${theme === 'dark' ? 'text-muted-foreground' : 'text-slate-600'}`}>
                     {item.details.map((detail, idx) => (
                       <li key={idx}>{detail}</li>
                     ))}

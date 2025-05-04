@@ -8,10 +8,13 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
+import { useTheme } from "@/components/ThemeProvider";
 
 const Index = () => {
+  const { theme } = useTheme();
+  
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className={`min-h-screen ${theme === 'dark' ? 'bg-slate-950' : 'bg-white'}`}>
       <Navbar />
       <Hero />
       <About />
@@ -27,12 +30,12 @@ const Index = () => {
       <Projects />
       <Contact />
       
-      <footer className="bg-slate-900 py-6">
+      <footer className={`${theme === 'dark' ? 'bg-slate-900' : 'bg-slate-100'} py-6`}>
         <div className="container mx-auto px-6 text-center">
-          <p className="text-muted-foreground">
+          <p className={`${theme === 'dark' ? 'text-muted-foreground' : 'text-slate-600'}`}>
             &copy; {new Date().getFullYear()} Shimels Alem. All rights reserved.
           </p>
-          <p className="text-muted-foreground text-sm mt-2">
+          <p className={`${theme === 'dark' ? 'text-muted-foreground' : 'text-slate-600'} text-sm mt-2`}>
             <a 
               href="https://shimels1.github.io/portofolio" 
               target="_blank" 
