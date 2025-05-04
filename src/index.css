@@ -7,85 +7,44 @@
 
 @layer base {
   :root {
-    /* Light mode variables */
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-
-    --primary: 172 66% 50%;
-    --primary-foreground: 222 47% 11%;
-
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 222 47% 11%;
-
-    --muted: 220 14% 96%;
-    --muted-foreground: 215 20% 45%;
-
-    --accent: 172 66% 50%;
-    --accent-foreground: 222 47% 11%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 172 66% 50%;
-
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 222 47% 11%;
-    --sidebar-primary: 172 66% 50%;
-    --sidebar-primary-foreground: 222 47% 11%;
-    --sidebar-accent: 220 14% 96%;
-    --sidebar-accent-foreground: 222 47% 11%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 172 66% 50%;
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    /* Dark mode variables */
-    --background: 222 47% 11%;
+    --background: 225 30% 10%;
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 13%;
+    --card: 225 30% 12%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 13%;
+    --popover: 225 30% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 172 66% 50%;
-    --primary-foreground: 222 47% 11%;
+    --primary: 260 100% 55%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 222 47% 20%;
+    --secondary: 225 30% 20%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 222 47% 20%;
+    --muted: 225 30% 20%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 172 66% 50%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 260 100% 55%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 222 47% 20%;
-    --input: 222 47% 20%;
-    --ring: 172 66% 50%;
+    --border: 225 30% 20%;
+    --input: 225 30% 20%;
+    --ring: 260 100% 55%;
 
-    --sidebar-background: 222 47% 11%;
+    --radius: 0.5rem;
+
+    --sidebar-background: 225 30% 10%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 172 66% 50%;
-    --sidebar-primary-foreground: 222 47% 11%;
-    --sidebar-accent: 222 47% 20%;
+    --sidebar-primary: 260 100% 55%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 225 30% 20%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 222 47% 20%;
-    --sidebar-ring: 172 66% 50%;
+    --sidebar-border: 225 30% 20%;
+    --sidebar-ring: 260 100% 55%;
   }
 
   * {
@@ -104,33 +63,32 @@
 @layer components {
   .section-title {
     @apply text-3xl md:text-4xl font-bold mb-6 relative inline-block;
-    @apply after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-1/2 after:h-1 after:bg-teal-500;
+    @apply after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-1/2 after:h-1 after:bg-purple-500;
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/20 hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:-translate-y-1;
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-teal-600;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-600;
   }
 
   .timeline-item {
-    @apply relative pl-10 pb-10 border-l border-teal-500/30;
+    @apply relative pl-10 pb-10 border-l border-purple-500/30;
   }
   
   .timeline-item::before {
     content: '';
-    @apply absolute w-4 h-4 bg-teal-500 rounded-full -left-2 top-2;
+    @apply absolute w-4 h-4 bg-purple-500 rounded-full -left-2 top-2;
   }
   
   .timeline-date {
-    @apply text-sm mb-1 flex items-center;
-    @apply dark:text-muted-foreground text-slate-500;
+    @apply text-sm text-muted-foreground mb-1 flex items-center;
   }
   
   .skill-badge {
-    @apply dark:bg-slate-800 bg-slate-200 text-sm px-3 py-1 rounded-full;
+    @apply bg-navy-700 text-sm px-3 py-1 rounded-full;
   }
 }
 
