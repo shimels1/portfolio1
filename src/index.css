@@ -7,49 +7,6 @@
 
 @layer base {
   :root {
-    /* Light mode variables */
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-
-    --primary: 172 66% 50%;
-    --primary-foreground: 222 47% 11%;
-
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 222 47% 11%;
-
-    --muted: 220 14% 96%;
-    --muted-foreground: 215 20% 45%;
-
-    --accent: 172 66% 50%;
-    --accent-foreground: 222 47% 11%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 172 66% 50%;
-
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 222 47% 11%;
-    --sidebar-primary: 172 66% 50%;
-    --sidebar-primary-foreground: 222 47% 11%;
-    --sidebar-accent: 220 14% 96%;
-    --sidebar-accent-foreground: 222 47% 11%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 172 66% 50%;
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    /* Dark mode variables */
     --background: 222 47% 11%;
     --foreground: 210 40% 98%;
 
@@ -77,6 +34,8 @@
     --border: 222 47% 20%;
     --input: 222 47% 20%;
     --ring: 172 66% 50%;
+
+    --radius: 0.5rem;
 
     --sidebar-background: 222 47% 11%;
     --sidebar-foreground: 210 40% 98%;
@@ -125,12 +84,11 @@
   }
   
   .timeline-date {
-    @apply text-sm mb-1 flex items-center;
-    @apply dark:text-muted-foreground text-slate-500;
+    @apply text-sm text-muted-foreground mb-1 flex items-center;
   }
   
   .skill-badge {
-    @apply dark:bg-slate-800 bg-slate-200 text-sm px-3 py-1 rounded-full;
+    @apply bg-slate-800 text-sm px-3 py-1 rounded-full;
   }
 }
 
