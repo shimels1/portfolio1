@@ -1,13 +1,12 @@
 
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Home, User, Code, Briefcase, Mail, GraduationCap, Award, Moon, Sun } from "lucide-react";
-import { useTheme } from "@/components/theme-provider";
+import { Home, User, Code, Briefcase, Mail, GraduationCap, Award } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
-  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,10 +34,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
-
   const navItems = [
     { name: "Home", href: "#home", icon: Home },
     { name: "About", href: "#about", icon: User },
@@ -53,7 +48,9 @@ const Navbar = () => {
     <nav
       className={cn(
         "fixed w-full px-6 py-4 transition-all duration-300 z-50",
-        scrolled ? "bg-background/80 backdrop-blur-md shadow-sm border-b border-border/50" : "bg-transparent"
+        scrolled 
+          ? "dark:bg-slate-950/80 bg-white/80 backdrop-blur-md shadow-lg" 
+          : "bg-transparent"
       )}
     >
       <div className="container mx-auto flex justify-between items-center">
@@ -66,23 +63,19 @@ const Navbar = () => {
               key={item.name}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors duration-200 hover:text-primary",
+                "text-sm font-medium transition-colors duration-200 hover:text-teal-500",
                 activeSection === item.href.substring(1)
-                  ? "text-primary"
-                  : "text-foreground/70"
+                  ? "text-teal-500"
+                  : "dark:text-foreground/70 text-slate-700"
               )}
             >
               {item.name}
             </a>
           ))}
         </div>
-        <div className="flex items-center">
-          <button 
-            onClick={toggleTheme}
-            className="p-2 rounded-full bg-secondary/50 hover:bg-secondary text-foreground/70 hover:text-foreground transition-colors mr-4"
-          >
-            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
+        
+        <div className="flex items-center space-x-4">
+          <ThemeToggle />
           <div className="md:hidden flex space-x-2">
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -93,8 +86,8 @@ const Navbar = () => {
                   className={cn(
                     "p-2 rounded-full transition-colors duration-200",
                     activeSection === item.href.substring(1)
-                      ? "text-primary-foreground bg-primary"
-                      : "text-foreground/70 hover:bg-secondary"
+                      ? "text-teal-500 dark:bg-slate-800 bg-slate-200"
+                      : "dark:text-foreground/70 text-slate-700 hover:bg-slate-200 dark:hover:bg-slate-800"
                   )}
                 >
                   <Icon size={20} />
