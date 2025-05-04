@@ -34,7 +34,7 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-24">
+    <section id="education" className="py-24 bg-secondary/40 dark:bg-secondary/5">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center mb-16">
           <h2 className="section-title text-center">Education</h2>
@@ -46,13 +46,13 @@ const Education = () => {
         <div className="space-y-8">
           {educationList.map((item, index) => (
             <div key={index} className="relative">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-teal-500 text-slate-900 absolute left-0 z-10">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground absolute left-0 z-10 shadow-lg">
                 <GraduationCap className="w-5 h-5" />
               </div>
 
-              <div className="bg-slate-800 p-6 rounded-xl ml-12 card-hover">
+              <div className="bg-card border border-border/50 p-6 rounded-2xl ml-12 card-hover shadow-sm">
                 <div className="mb-2">
-                  <h3 className="text-xl font-bold text-teal-400">{item.degree}</h3>
+                  <h3 className="text-xl font-bold text-primary">{item.degree}</h3>
                 </div>
                 <div className="mb-1">
                   <span className="font-medium">{item.institution}</span>
@@ -65,7 +65,10 @@ const Education = () => {
                 {item.details && item.details.length > 0 && (
                   <ul className="text-muted-foreground">
                     {item.details.map((detail, idx) => (
-                      <li key={idx}>{detail}</li>
+                      <li key={idx} className="flex items-start">
+                        <span className="mr-2 text-primary">•</span>
+                        {detail}
+                      </li>
                     ))}
                   </ul>
                 )}
