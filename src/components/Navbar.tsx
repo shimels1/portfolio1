@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Home, User, Code, Briefcase, Mail } from "lucide-react";
+import { Home, User, Code, Briefcase, Mail, GraduationCap, Award } from "lucide-react";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -9,7 +9,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "skills", "projects", "contact"];
+      const sections = ["home", "about", "experience", "education", "skills", "projects", "contact"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -36,8 +36,10 @@ const Navbar = () => {
   const navItems = [
     { name: "Home", href: "#home", icon: Home },
     { name: "About", href: "#about", icon: User },
+    { name: "Experience", href: "#experience", icon: Briefcase },
+    { name: "Education", href: "#education", icon: GraduationCap },
     { name: "Skills", href: "#skills", icon: Code },
-    { name: "Projects", href: "#projects", icon: Briefcase },
+    { name: "Projects", href: "#projects", icon: Award },
     { name: "Contact", href: "#contact", icon: Mail },
   ];
 
@@ -50,9 +52,9 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex justify-between items-center">
         <a href="#home" className="text-xl font-bold text-gradient">
-          Shimel S.
+          Shimels A.
         </a>
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-6">
           {navItems.map((item) => (
             <a
               key={item.name}
@@ -68,7 +70,7 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-        <div className="md:hidden flex space-x-4">
+        <div className="md:hidden flex space-x-2">
           {navItems.map((item) => {
             const Icon = item.icon;
             return (

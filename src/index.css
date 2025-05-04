@@ -73,4 +73,59 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-600;
   }
+
+  .timeline-item {
+    @apply relative pl-10 pb-10 border-l border-purple-500/30;
+  }
+  
+  .timeline-item::before {
+    content: '';
+    @apply absolute w-4 h-4 bg-purple-500 rounded-full -left-2 top-2;
+  }
+  
+  .timeline-date {
+    @apply text-sm text-muted-foreground mb-1 flex items-center;
+  }
+  
+  .skill-badge {
+    @apply bg-navy-700 text-sm px-3 py-1 rounded-full;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in-delay-1 {
+  animation: fadeInUp 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fadeInUp 0.6s ease-out 0.4s forwards;
+  opacity: 0;
 }

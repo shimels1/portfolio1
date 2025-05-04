@@ -17,12 +17,12 @@ const Hero = () => {
                 Hello, I'm
               </h2>
               <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                Shimel Sisay
+                Shimels Alem
               </h1>
               <div className="flex items-center">
                 <div className="h-[2px] w-16 bg-purple-500 mr-3"></div>
                 <p className="text-xl md:text-2xl text-muted-foreground">
-                  Frontend Developer
+                  Full Stack Developer | Machine Learning Engineer
                 </p>
               </div>
             </div>
@@ -52,8 +52,8 @@ const Hero = () => {
               <div className="relative h-full flex items-center justify-center">
                 <div className="bg-navy-800 rounded-full w-64 h-64 overflow-hidden border-4 border-purple-500/30">
                   <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
-                    alt="Professional portrait of Shimel"
+                    src="/lovable-uploads/a476d0f8-bae2-4cd7-aafe-4cd9dee94ad0.png"
+                    alt="Professional portrait of Shimels"
                     className="h-full w-full object-cover"
                   />
                 </div>

@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Phone, Mail, Github, Linkedin } from "lucide-react";
+import { Phone, Mail, Github, Linkedin, MapPin } from "lucide-react";
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -30,7 +30,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Phone</p>
-                    <p>+251-923-39-05-65</p>
+                    <p>+251918375305</p>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -39,7 +39,16 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p>sisayshimel42@gmail.com</p>
+                    <p>shimelsalem@gmail.com</p>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <div className="p-3 rounded-full bg-purple-500/20 mr-4">
+                    <MapPin className="text-purple-500" size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Location</p>
+                    <p>Addis Ababa, Ethiopia</p>
                   </div>
                 </div>
               </div>
