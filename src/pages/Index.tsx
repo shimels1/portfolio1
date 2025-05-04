@@ -11,17 +11,23 @@ import Experience from "@/components/Experience";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-navy-900">
+    <div className="min-h-screen bg-slate-950">
       <Navbar />
       <Hero />
       <About />
-      <Experience />
-      <Education />
+      <div className="flex flex-col lg:flex-row">
+        <div className="lg:w-1/2">
+          <Experience />
+        </div>
+        <div className="lg:w-1/2">
+          <Education />
+        </div>
+      </div>
       <Skills />
       <Projects />
       <Contact />
       
-      <footer className="bg-navy-800 py-6">
+      <footer className="bg-slate-900 py-6">
         <div className="container mx-auto px-6 text-center">
           <p className="text-muted-foreground">
             &copy; {new Date().getFullYear()} Shimels Alem. All rights reserved.
@@ -31,7 +37,7 @@ const Index = () => {
               href="https://shimels1.github.io/portofolio" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-purple-500"
+              className="hover:text-teal-500"
             >
               https://shimels1.github.io/portofolio
             </a>

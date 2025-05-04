@@ -47,7 +47,7 @@ const Navbar = () => {
     <nav
       className={cn(
         "fixed w-full px-6 py-4 transition-all duration-300 z-50",
-        scrolled ? "bg-navy-900/80 backdrop-blur-md shadow-lg" : "bg-transparent"
+        scrolled ? "bg-slate-950/80 backdrop-blur-md shadow-lg" : "bg-transparent"
       )}
     >
       <div className="container mx-auto flex justify-between items-center">
@@ -60,9 +60,9 @@ const Navbar = () => {
               key={item.name}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors duration-200 hover:text-purple-500",
+                "text-sm font-medium transition-colors duration-200 hover:text-teal-500",
                 activeSection === item.href.substring(1)
-                  ? "text-purple-500"
+                  ? "text-teal-500"
                   : "text-foreground/70"
               )}
             >
@@ -80,8 +80,8 @@ const Navbar = () => {
                 className={cn(
                   "p-2 rounded-full transition-colors duration-200",
                   activeSection === item.href.substring(1)
-                    ? "text-purple-500 bg-navy-800"
-                    : "text-foreground/70 hover:bg-navy-800"
+                    ? "text-teal-500 bg-slate-800"
+                    : "text-foreground/70 hover:bg-slate-800"
                 )}
               >
                 <Icon size={20} />
