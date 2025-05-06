@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { ExternalLink, Github, ChevronDown } from "lucide-react";
+import { ExternalLink, Github, ChevronDown, Maximize2 } from "lucide-react";
 import { 
   Accordion,
   AccordionContent,
@@ -15,6 +15,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 interface ProjectImage {
   url: string;
@@ -32,6 +37,7 @@ interface Project {
 }
 
 const Projects = () => {
+  const [selectedImage, setSelectedImage] = useState<ProjectImage | null>(null);
   const projects: Project[] = [
     {
       title: "Continuous Sign Language Recognition",
@@ -170,17 +176,35 @@ const Projects = () => {
               key={index}
               className="bg-navy-700 rounded-xl overflow-hidden card-hover"
             >
-              <div className="h-52 overflow-hidden">
+              <div className="h-52 overflow-hidden relative">
                 <Carousel className="w-full">
                   <CarouselContent>
                     {project.images.map((image, imgIndex) => (
                       <CarouselItem key={imgIndex}>
-                        <div className="h-52">
+                        <div className="h-52 relative">
                           <img
                             src={image.url}
                             alt={image.alt}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover cursor-pointer"
+                            onClick={() => setSelectedImage(image)}
                           />
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <button 
+                                className="absolute bottom-2 right-2 bg-black/50 p-1.5 rounded-md hover:bg-black/70 transition-colors"
+                                aria-label="View fullscreen"
+                              >
+                                <Maximize2 className="h-4 w-4 text-white" />
+                              </button>
+                            </DialogTrigger>
+                            <DialogContent className="max-w-[90vw] max-h-[90vh] w-auto h-auto p-0 border-none bg-transparent">
+                              <img
+                                src={image.url}
+                                alt={image.alt}
+                                className="w-full h-full object-contain"
+                              />
+                            </DialogContent>
+                          </Dialog>
                         </div>
                       </CarouselItem>
                     ))}
