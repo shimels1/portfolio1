@@ -1,12 +1,10 @@
-
 import React, { useState } from "react";
-import { ExternalLink, Github, ChevronDown, Maximize2 } from "lucide-react";
-import { 
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from "@/components/ui/accordion";
+import { ExternalLink, Github, Maximize2, ChevronDown } from "lucide-react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger
+} from "@/components/ui/collapsible";
 import {
   Carousel,
   CarouselContent,
@@ -33,15 +31,23 @@ interface Project {
   tags: string[];
   liveLink?: string;
   githubLink?: string;
-  details?: string[];
 }
 
 const Projects = () => {
   const [selectedImage, setSelectedImage] = useState<ProjectImage | null>(null);
+  const [expandedDescriptions, setExpandedDescriptions] = useState<Record<number, boolean>>({});
+  
+  const toggleDescription = (index: number) => {
+    setExpandedDescriptions(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+  
   const projects: Project[] = [
     {
       title: "Continuous Sign Language Recognition",
-      description: "A machine learning project using Python, Keras and Deep Learning to recognize Ethiopian Sign Language.",
+      description: "A machine learning project using Python, Keras and Deep Learning to recognize Ethiopian Sign Language. Implemented CNN and LSTM hybrid architecture. Achieved 87% accuracy on test dataset. Created custom dataset of Ethiopian Sign Language gestures. Developed real-time recognition capabilities.",
       images: [
         {
           url: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dGFzayUyMG1hbmFnZW1lbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
@@ -54,16 +60,10 @@ const Projects = () => {
       ],
       tags: ["Python", "Keras", "Deep Learning"],
       githubLink: "https://github.com/shimels1",
-      details: [
-        "Implemented CNN and LSTM hybrid architecture",
-        "Achieved 87% accuracy on test dataset",
-        "Created custom dataset of Ethiopian Sign Language gestures",
-        "Developed real-time recognition capabilities"
-      ]
     },
     {
       title: "Online Food Ordering App",
-      description: "A food ordering application for Bahir Dar city built using Android and Firebase.",
+      description: "A food ordering application for Bahir Dar city built using Android and Firebase. Real-time order tracking and notifications. Integrated payment gateway. Restaurant and menu management system. User authentication and profile management.",
       images: [
         {
           url: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZWNvbW1lcmNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -80,16 +80,10 @@ const Projects = () => {
       ],
       tags: ["Android", "Firebase", "Java"],
       githubLink: "https://github.com/shimels1",
-      details: [
-        "Real-time order tracking and notifications",
-        "Integrated payment gateway",
-        "Restaurant and menu management system",
-        "User authentication and profile management"
-      ]
     },
     {
       title: "Entertainment Website",
-      description: "A website built with Angular, Node.js, and MySQL for entertainment content.",
+      description: "A website built with Angular, Node.js, and MySQL for entertainment content. Content management system for administrators. User-generated content and comments. Personalized content recommendations. Advanced search functionality.",
       images: [
         {
           url: "https://images.unsplash.com/photo-1492011221367-f47e3ccd77a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHdlYXRoZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
@@ -102,16 +96,10 @@ const Projects = () => {
       ],
       tags: ["Angular", "Node.js", "MySQL"],
       githubLink: "https://github.com/shimels1",
-      details: [
-        "Content management system for administrators",
-        "User-generated content and comments",
-        "Personalized content recommendations",
-        "Advanced search functionality"
-      ]
     },
     {
       title: "Pavement Management System",
-      description: "An application built with Angular, Node.js and PostgreSQL for managing pavement infrastructure.",
+      description: "An application built with Angular, Node.js and PostgreSQL for managing pavement infrastructure. GIS integration for spatial data visualization. Condition assessment and reporting. Maintenance scheduling and budget planning. Mobile data collection capabilities.",
       images: [
         {
           url: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2Vic2l0ZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
@@ -128,16 +116,10 @@ const Projects = () => {
       ],
       tags: ["Angular", "Node.js", "PostgreSQL"],
       githubLink: "https://github.com/shimels1",
-      details: [
-        "GIS integration for spatial data visualization",
-        "Condition assessment and reporting",
-        "Maintenance scheduling and budget planning",
-        "Mobile data collection capabilities"
-      ]
     },
     {
       title: "Bible App",
-      description: "A mobile application built with Android and SQLite for reading and studying the Bible.",
+      description: "A mobile application built with Android and SQLite for reading and studying the Bible. Multiple Bible translations. Verse highlighting and note-taking. Daily reading plans. Offline access to all content. Search functionality across all books.",
       images: [
         {
           url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZWNvbW1lcmNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -150,13 +132,6 @@ const Projects = () => {
       ],
       tags: ["Android", "SQLite"],
       githubLink: "https://github.com/shimels1",
-      details: [
-        "Multiple Bible translations",
-        "Verse highlighting and note-taking",
-        "Daily reading plans",
-        "Offline access to all content",
-        "Search functionality across all books"
-      ]
     },
   ];
 
@@ -215,9 +190,30 @@ const Projects = () => {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-muted-foreground mb-4 h-16 overflow-hidden">
-                  {project.description}
-                </p>
+                
+                <Collapsible 
+                  open={expandedDescriptions[index]} 
+                  onOpenChange={() => toggleDescription(index)}
+                  className="mb-4"
+                >
+                  <div className={expandedDescriptions[index] ? "" : "h-16 overflow-hidden"}>
+                    <p className="text-muted-foreground">
+                      {project.description}
+                    </p>
+                  </div>
+                  
+                  <CollapsibleTrigger asChild>
+                    <button 
+                      className="flex items-center text-xs text-teal-400 hover:text-teal-300 mt-1"
+                    >
+                      {expandedDescriptions[index] ? "Show Less" : "Show More"}
+                      <ChevronDown 
+                        className={`ml-1 h-4 w-4 transition-transform ${expandedDescriptions[index] ? "rotate-180" : ""}`} 
+                      />
+                    </button>
+                  </CollapsibleTrigger>
+                </Collapsible>
+                
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag) => (
                     <span
@@ -228,27 +224,6 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                
-                {project.details && (
-                  <div className="mb-6">
-                    <Accordion type="single" collapsible className="w-full">
-                      <AccordionItem value={`item-${index}`} className="border-navy-800">
-                        <AccordionTrigger className="py-2 text-teal-400 hover:text-teal-300">
-                          Project Details
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <ul className="list-disc pl-5 text-sm text-muted-foreground">
-                            {project.details.map((detail, detailIndex) => (
-                              <li key={detailIndex} className="mb-1">
-                                {detail}
-                              </li>
-                            ))}
-                          </ul>
-                        </AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
-                  </div>
-                )}
                 
                 <div className="flex justify-between">
                   {project.liveLink && (
