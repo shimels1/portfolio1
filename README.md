@@ -3,7 +3,7 @@
 ## Project info
 
 **URL**: https://lovable.dev/projects/1b04aa04-788c-42ec-afe6-2cc69ee57415
-
+**Live URL**: https://shimels-shine-showcase.lovable.app/
 ## How can I edit this code?
 
 There are several ways of editing your application.
