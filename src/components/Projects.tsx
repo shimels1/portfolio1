@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { ExternalLink, Github, Maximize2, ChevronDown } from "lucide-react";
 import {
@@ -218,7 +219,7 @@ const Projects = () => {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="bg-navy-800 text-purple-400 text-xs px-3 py-1 rounded-full"
+                      className="bg-navy-800 text-teal-400 text-xs px-3 py-1 rounded-full"
                     >
                       {tag}
                     </span>
@@ -231,7 +232,7 @@ const Projects = () => {
                       href={project.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-sm text-purple-500 hover:text-purple-400"
+                      className="flex items-center text-sm text-teal-500 hover:text-teal-400"
                     >
                       <ExternalLink size={16} className="mr-1" />
                       Live Preview
@@ -242,7 +243,7 @@ const Projects = () => {
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-sm text-purple-500 hover:text-purple-400"
+                      className="flex items-center text-sm text-teal-500 hover:text-teal-400"
                     >
                       <Github size={16} className="mr-1" />
                       View Code
