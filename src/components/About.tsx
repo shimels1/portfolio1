@@ -18,7 +18,7 @@ const About = () => {
             <h3 className="text-2xl font-bold">Get to know me!</h3>
             <div className="space-y-4">
               <p className="text-muted-foreground">
-                I'm a <span className="text-purple-500 font-medium">Full Stack Developer and Machine Learning Engineer</span> with 
+                I'm a <span className="text-teal-500 font-medium">Full Stack Developer and Machine Learning Engineer</span> with 
                 expertise in building responsive web applications, mobile apps, and ML solutions that provide 
                 exceptional digital experiences.
               </p>
@@ -34,7 +34,7 @@ const About = () => {
             </div>
             <a
               href="#contact"
-              className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-medium py-3 px-8 rounded-md transition-colors duration-300"
+              className="inline-block bg-teal-500 hover:bg-teal-600 text-white font-medium py-3 px-8 rounded-md transition-colors duration-300"
             >
               Contact Me
             </a>
@@ -45,8 +45,8 @@ const About = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="bg-navy-700 p-6 rounded-lg card-hover">
                 <div className="flex items-center mb-4">
-                  <div className="p-2 rounded-full bg-purple-500/20 mr-3">
-                    <Phone size={20} className="text-purple-500" />
+                  <div className="p-2 rounded-full bg-teal-500/20 mr-3">
+                    <Phone size={20} className="text-teal-500" />
                   </div>
                   <h4 className="font-medium">Phone</h4>
                 </div>
@@ -55,8 +55,8 @@ const About = () => {
 
               <div className="bg-navy-700 p-6 rounded-lg card-hover">
                 <div className="flex items-center mb-4">
-                  <div className="p-2 rounded-full bg-purple-500/20 mr-3">
-                    <Mail size={20} className="text-purple-500" />
+                  <div className="p-2 rounded-full bg-teal-500/20 mr-3">
+                    <Mail size={20} className="text-teal-500" />
                   </div>
                   <h4 className="font-medium">Email</h4>
                 </div>
@@ -65,8 +65,8 @@ const About = () => {
 
               <div className="bg-navy-700 p-6 rounded-lg card-hover">
                 <div className="flex items-center mb-4">
-                  <div className="p-2 rounded-full bg-purple-500/20 mr-3">
-                    <GraduationCap size={20} className="text-purple-500" />
+                  <div className="p-2 rounded-full bg-teal-500/20 mr-3">
+                    <GraduationCap size={20} className="text-teal-500" />
                   </div>
                   <h4 className="font-medium">Education</h4>
                 </div>
@@ -75,8 +75,8 @@ const About = () => {
 
               <div className="bg-navy-700 p-6 rounded-lg card-hover">
                 <div className="flex items-center mb-4">
-                  <div className="p-2 rounded-full bg-purple-500/20 mr-3">
-                    <MapPin size={20} className="text-purple-500" />
+                  <div className="p-2 rounded-full bg-teal-500/20 mr-3">
+                    <MapPin size={20} className="text-teal-500" />
                   </div>
                   <h4 className="font-medium">Location</h4>
                 </div>
@@ -91,7 +91,7 @@ const About = () => {
             <h3 className="text-2xl font-bold mb-6">Awards & Achievements</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-navy-800 p-6 rounded-lg card-hover">
-                <h4 className="text-xl font-bold mb-3 text-purple-400">Certificate of Appreciation</h4>
+                <h4 className="text-xl font-bold mb-3 text-teal-400">Certificate of Appreciation</h4>
                 <p className="text-muted-foreground">
                   Certificate of appreciation in 2018 Annual Software development competition, at Bahir dar institute of 
                   Technology. I was awarded certificate of appreciation as a second place winner 
@@ -100,7 +100,7 @@ const About = () => {
               </div>
               
               <div className="bg-navy-800 p-6 rounded-lg card-hover">
-                <h4 className="text-xl font-bold mb-3 text-purple-400">Letter of Appreciation</h4>
+                <h4 className="text-xl font-bold mb-3 text-teal-400">Letter of Appreciation</h4>
                 <p className="text-muted-foreground">
                   For my work on Online food ordering App for Bahir Dar city, after being evaluated by experts and found to be one of potential projects for further developments. I was allowed to participate in job fair and Technology exhibition and given a letter of appreciation from University Industry Linkage and community director, Dr. Sisay Geremew.
                 </p>
