@@ -52,13 +52,13 @@ const Experience = () => {
         <div className="space-y-8">
           {experienceList.map((item, index) => (
             <div key={index} className="relative">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-teal-500 text-slate-900 absolute left-0 z-10">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500 text-slate-900 absolute left-0 z-10">
                 <Briefcase className="w-5 h-5" />
               </div>
 
               <div className="bg-slate-800 p-6 rounded-xl ml-12 card-hover">
                 <div className="mb-2">
-                  <h3 className="text-xl font-bold text-teal-400">{item.title}</h3>
+                  <h3 className="text-xl font-bold text-indigo-400">{item.title}</h3>
                 </div>
                 <div className="mb-1">
                   <span className="font-medium">{item.company}</span>
@@ -73,7 +73,7 @@ const Experience = () => {
                 </div>
                 <p className="text-muted-foreground mb-3">{item.description}</p>
                 <div>
-                  <strong className="text-sm text-teal-400">Key Responsibilities:</strong>
+                  <strong className="text-sm text-indigo-400">Key Responsibilities:</strong>
                   <ul className="text-muted-foreground list-disc pl-5 mt-2 space-y-1">
                     {item.responsibilities.map((resp, idx) => (
                       <li key={idx}>{resp}</li>

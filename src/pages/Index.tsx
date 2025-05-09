@@ -37,7 +37,7 @@ const Index = () => {
               href="https://shimels1.github.io/portofolio" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-teal-500"
+              className="hover:text-indigo-400"
             >
               https://shimels1.github.io/portofolio
             </a>

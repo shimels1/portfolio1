@@ -14,8 +14,8 @@ interface Skill {
 
 const Skills = () => {
   const languageSkills: LanguageSkill[] = [
-    { name: "Amharic", level: 100, proficiency: "Native", color: "from-[#FF6B6B] to-[#FF6B6B]" },
-    { name: "English", level: 80, proficiency: "Proficient", color: "from-[#FF6B6B] to-[#FF6B6B]" },
+    { name: "Amharic", level: 100, proficiency: "Native", color: "from-[#6366F1] to-[#6366F1]" },
+    { name: "English", level: 80, proficiency: "Proficient", color: "from-[#6366F1] to-[#6366F1]" },
   ];
 
   const programmingSkills: Skill[] = [
@@ -90,7 +90,7 @@ const Skills = () => {
                   key={index}
                   className="flex items-center p-4 bg-navy-700 rounded-lg"
                 >
-                  <div className="h-3 w-3 rounded-full bg-purple-500 mr-3"></div>
+                  <div className="h-3 w-3 rounded-full bg-indigo-500 mr-3"></div>
                   <span className="font-medium">{strength}</span>
                 </div>
               ))}

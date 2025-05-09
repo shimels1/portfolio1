@@ -60,9 +60,9 @@ const Navbar = () => {
               key={item.name}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors duration-200 hover:text-teal-500",
+                "text-sm font-medium transition-colors duration-200 hover:text-indigo-400",
                 activeSection === item.href.substring(1)
-                  ? "text-teal-500"
+                  ? "text-indigo-400"
                   : "text-foreground/70"
               )}
             >
@@ -80,7 +80,7 @@ const Navbar = () => {
                 className={cn(
                   "p-2 rounded-full transition-colors duration-200",
                   activeSection === item.href.substring(1)
-                    ? "text-teal-500 bg-slate-800"
+                    ? "text-indigo-400 bg-slate-800"
                     : "text-foreground/70 hover:bg-slate-800"
                 )}
               >

@@ -46,13 +46,13 @@ const Education = () => {
         <div className="space-y-8">
           {educationList.map((item, index) => (
             <div key={index} className="relative">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-teal-500 text-slate-900 absolute left-0 z-10">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500 text-slate-900 absolute left-0 z-10">
                 <GraduationCap className="w-5 h-5" />
               </div>
 
               <div className="bg-slate-800 p-6 rounded-xl ml-12 card-hover">
                 <div className="mb-2">
-                  <h3 className="text-xl font-bold text-teal-400">{item.degree}</h3>
+                  <h3 className="text-xl font-bold text-indigo-400">{item.degree}</h3>
                 </div>
                 <div className="mb-1">
                   <span className="font-medium">{item.institution}</span>

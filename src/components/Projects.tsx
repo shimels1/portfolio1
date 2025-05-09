@@ -205,7 +205,7 @@ const Projects = () => {
                   
                   <CollapsibleTrigger asChild>
                     <button 
-                      className="flex items-center text-xs text-teal-400 hover:text-teal-300 mt-1"
+                      className="flex items-center text-xs text-indigo-400 hover:text-indigo-300 mt-1"
                     >
                       {expandedDescriptions[index] ? "Show Less" : "Show More"}
                       <ChevronDown 
@@ -219,7 +219,7 @@ const Projects = () => {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="bg-navy-800 text-teal-400 text-xs px-3 py-1 rounded-full"
+                      className="bg-navy-800 text-indigo-400 text-xs px-3 py-1 rounded-full"
                     >
                       {tag}
                     </span>
@@ -232,7 +232,7 @@ const Projects = () => {
                       href={project.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-sm text-teal-500 hover:text-teal-400"
+                      className="flex items-center text-sm text-indigo-400 hover:text-indigo-300"
                     >
                       <ExternalLink size={16} className="mr-1" />
                       Live Preview
@@ -243,7 +243,7 @@ const Projects = () => {
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-sm text-teal-500 hover:text-teal-400"
+                      className="flex items-center text-sm text-indigo-400 hover:text-indigo-300"
                     >
                       <Github size={16} className="mr-1" />
                       View Code

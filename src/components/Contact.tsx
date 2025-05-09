@@ -25,8 +25,8 @@ const Contact = () => {
               <h3 className="text-xl font-bold mb-6">Contact Information</h3>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <div className="p-3 rounded-full bg-purple-500/20 mr-4">
-                    <Phone className="text-purple-500" size={20} />
+                  <div className="p-3 rounded-full bg-indigo-500/20 mr-4">
+                    <Phone className="text-indigo-400" size={20} />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Phone</p>
@@ -34,8 +34,8 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <div className="p-3 rounded-full bg-purple-500/20 mr-4">
-                    <Mail className="text-purple-500" size={20} />
+                  <div className="p-3 rounded-full bg-indigo-500/20 mr-4">
+                    <Mail className="text-indigo-400" size={20} />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
@@ -43,8 +43,8 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <div className="p-3 rounded-full bg-purple-500/20 mr-4">
-                    <MapPin className="text-purple-500" size={20} />
+                  <div className="p-3 rounded-full bg-indigo-500/20 mr-4">
+                    <MapPin className="text-indigo-400" size={20} />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Location</p>
@@ -61,7 +61,7 @@ const Contact = () => {
                   href="https://github.com/shimels1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-navy-700 hover:bg-purple-500 transition-colors duration-300"
+                  className="p-3 rounded-full bg-navy-700 hover:bg-indigo-500 transition-colors duration-300"
                 >
                   <Github size={24} />
                 </a>
@@ -69,7 +69,7 @@ const Contact = () => {
                   href="#"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-navy-700 hover:bg-purple-500 transition-colors duration-300"
+                  className="p-3 rounded-full bg-navy-700 hover:bg-indigo-500 transition-colors duration-300"
                 >
                   <Linkedin size={24} />
                 </a>
@@ -91,7 +91,7 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full px-4 py-3 bg-navy-700 border border-navy-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-3 bg-navy-700 border border-navy-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
                   required
                 />
               </div>
@@ -106,7 +106,7 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full px-4 py-3 bg-navy-700 border border-navy-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-3 bg-navy-700 border border-navy-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
                   required
                 />
               </div>
@@ -121,7 +121,7 @@ const Contact = () => {
                   type="text"
                   id="subject"
                   name="subject"
-                  className="w-full px-4 py-3 bg-navy-700 border border-navy-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-3 bg-navy-700 border border-navy-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
                   required
                 />
               </div>
@@ -136,13 +136,13 @@ const Contact = () => {
                   id="message"
                   name="message"
                   rows={5}
-                  className="w-full px-4 py-3 bg-navy-700 border border-navy-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-3 bg-navy-700 border border-navy-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
                   required
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-purple-500 hover:bg-purple-600 text-white font-medium py-3 px-6 rounded-md transition-colors duration-300"
+                className="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-3 px-6 rounded-md transition-colors duration-300"
               >
                 Send Message
               </button>
